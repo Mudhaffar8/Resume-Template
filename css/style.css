@@ -1,0 +1,235 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('./reset.css');
+
+
+
+/* Setting CSS properties */
+:root {
+    /* Colours */
+    /* Neutral Colours */
+    --white: #fff;
+    --c-neutral-one: #f8fafc;
+    --c-neutral-two: #f1f5f9;
+    --c-neutral-three: #e2e8f0;
+    --c-neutral-four: #cbd5e1;
+    --c-neutral-five: #94a3b8;
+    --c-neutral-six: #64748b;
+    --c-neutral-seven: #475569;
+    --c-neutral-eight: #334155;
+    --c-neutral-nine: #1e293b;
+    --c-neutral-ten: #0f172a;
+
+    /* Accent Colours */
+    --c-accent-one: #e11d48;
+
+    /* Font Weights */
+    --fw-regular: 400;
+    --fw-semi-bold: 500;
+    --fw-bold: 700;
+
+    /* Font Family */
+    --ff-primary: 'Inter', sans-serif;
+
+    /* Miscellaneous */
+    --marker-diameter: 1.6rem;
+}
+
+
+
+/* Font size for Mobile Devices */
+html {font-size: 14px;}
+
+/* Default text values */
+* {
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-regular);
+    color: var(--c-neutral-eight);
+}
+
+
+
+/* Class ID styling */
+/* Main Container */
+.main_container {
+    max-width: 1100px;
+
+    padding: 2.4rem 1.8rem;
+    margin: 0 auto;
+}
+
+/* Top Header */
+.header_container {
+    width: 100%;
+    padding-top: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: var(--fw-bold);
+    color: var(--c-neutral-ten);
+    line-height: 1;
+}
+
+.objective {
+    color: var(--c-neutral-nine);
+    margin-top: 1rem;
+}
+
+.contacts_section {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contacts_section li a {text-decoration: none;}
+
+.contacts_section > :not(:first-child)  {margin-top: 0.4rem;}
+
+.contacts_section li a:hover {
+    text-decoration: underline;
+    color: var(--c-accent-one);
+}
+
+
+/* Main Header styling for larger devices */
+@media (min-width: 750px) {
+    html {font-size: 16px;}
+
+    .header_container {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .title_section {max-width: 30rem;}
+}
+
+
+
+/* Resume Experience Section */
+/* Container for all Positions */
+.resume_section {
+    padding-top: 3rem;
+    margin-top: 3rem;
+
+    border-top: 1px solid var(--c-neutral-five);
+}
+
+.section_title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--c-neutral-eight);
+    
+    margin-bottom: 2rem;
+}
+
+/* Container for one job */
+.job_experience {
+    display: grid;
+    grid-template-columns: var(--marker-diameter) minmax(auto, 45rem);
+    margin-bottom: 2rem;
+}
+
+/* Timeline on the side */
+.experience_timeline {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: var(--marker-diameter) 1fr;
+    gap: 1.2rem;
+    height: 100%;
+    padding-top: 0.3rem;
+}
+
+/* Gray Bullets on timeline */
+.experience_marker, .black_dot {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+.experience_marker {
+    width: 100%;
+    position: relative;
+
+    background-color: var(--c-neutral-three);
+}
+
+.black_dot {
+    width: 35%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: var(--c-neutral-ten);
+}
+
+/* Trim below timeline bullet */
+.experience_trim {
+    width: 0.17rem;
+    height: 100%;
+
+    background-color: var(--c-neutral-three);
+}
+
+/* All relevent text to the job is styled here */
+.experience_info {padding-left: 1.4rem;}
+
+.experience_position {
+    color: var(--c-neutral-ten);
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+}
+
+.experience_company {
+    font-size: 1.5rem;
+    color: var(--c-neutral-six);
+}
+
+.experience_date {
+    color: var(--c-neutral-seven);
+    font-size: 0.9rem;
+    font-weight: var(--fw-bold);
+}
+
+.experience_location {
+    font-size: 0.9rem;
+    color: var(--c-neutral-seven);
+}
+
+.position_company *:last-child {margin-left: 0;}
+
+.position_company, .date_location {margin-bottom: 0.8rem;}
+
+.experience_bullets {
+    margin-top: 1.2rem; 
+    margin-bottom: 0;
+}
+
+.experience_bullets li {margin-bottom: 0.9rem;}
+
+
+@media (min-width: 750px){
+    .position_company *, .date_location * {display: inline-block;}
+    .position_company *:last-child, .date_location *:last-child {margin-left: 0.8rem;}
+}
+/* Experience Styling ends here */
+
+
+
+/* Skills Section */
+.skills_grid {
+    max-width: 55rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+}
+
+@media (min-width: 750px) {
+    .skills_grid {grid-template-columns: repeat(4, 1fr);}
+}
