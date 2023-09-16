@@ -86,7 +86,10 @@ html {font-size: 14px;}
     margin: 0;
 }
 
-.contacts_section li a {text-decoration: none;}
+.contacts_section li a {
+    text-decoration: none;
+    color: var(--c-neutral-eight);
+}
 
 .contacts_section > :not(:first-child)  {margin-top: 0.4rem;}
 
@@ -188,6 +191,7 @@ html {font-size: 14px;}
 
 .experience_company {
     font-size: 1.5rem;
+    font-weight: var(--fw-bold);
     color: var(--c-neutral-six);
 }
 
